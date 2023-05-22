@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ZUser">
+    <typeAlias alias="ZUser" type="com.z5.zcms.admsys.user.domain.ZUser" />
+    <typeAlias alias="ZUserVo" type="com.z5.zcms.admsys.user.domain.ZUserVo" />
+    <typeAlias alias="ZUser2Vo" type="com.z5.zcms.admsys.user.domain.ZUser2Vo" />
+    <typeAlias alias="ZUserOrgVo" type="com.z5.zcms.admsys.user.domain.ZUserOrgVo" />
+    <resultMap id="ZUser" class="com.z5.zcms.admsys.user.domain.ZUser"/>
+    <resultMap id="ZUserVo" class="com.z5.zcms.admsys.user.domain.ZUserVo"/>
+    <resultMap id="ZUser2Vo" class="com.z5.zcms.admsys.user.domain.ZUser2Vo"/>
+    <resultMap id="ZUserOrgVo" class="com.z5.zcms.admsys.user.domain.ZUserOrgVo"/>
+    <typeAlias alias="MenuStaffVO" type="com.z5.zcms.frontsys.front.domain.MenuStaffVO" />
+    <resultMap id="MenuStaffVO" class="com.z5.zcms.frontsys.front.domain.MenuStaffVO"/>
+
+    <typeAlias alias="SearchUser" type="com.z5.zcms.admsys.user.domain.SearchUser" />
+    <resultMap id="SearchUser" class="com.z5.zcms.admsys.user.domain.SearchUser"/>
+    
+    <typeAlias alias="input" type="com.z5.zcms.util.DataTable"/>
+
+         <!--부조리 신고 센터-->
+         <insert id="ZUser.InsertCall" parameterClass="ZUserVo" >
+        <![CDATA[
+             INSERT INTO ZBOARDCOMMON36
+				(BBSNO, SITENO, BOARDNO, BBSTOPNO, BBSLEVEL, BBSSTEP, BBSPARENTNO, USERID, BBSPASSWD, BBSIP, BBSHIT, BBSTITLE, BBSCONTS, BBSCONTSTYPE, BBSCATENOS, BBSNOTICE, BBSSECRET, BBSDATEREG, BBSDATEMOD, BBSUSERNAME, BBSUSEREMAIL, BBSUSERHOMEPAGE, BBSUSERTEL, BBSUSERMOBILE, BBSUSERADDR, SPONSOR, PLACE, JOINNUM, SDATE, EDATE, GOAL, APPROVAL, BBSOPEN, BBSCLOSE, SHW_YN, ETC1, ETC2, ETC3, ETC4, ETC5, ETC6, ETC7, ETC8, ETC9, ETC10)
+							VALUES(
+				#seq#,
+				'1', 
+				'44',
+				'1', 
+				'0', 
+				'0', 
+				'0', 
+				#pro_id#, 
+				'', 
+				'', 
+				'0',
+				#cond9#, 
+				#cond10#,
+				'1', 
+				#menuno#, 
+				'0',
+				'0',
+				TO_CHAR(SYSDATE,'YYYYMMDDHH24MISS'), 
+				'', 
+				#username#,
+				'',
+				'',
+				#cond4#,
+				#cond5#,
+				'',
+				'',
+				'',
+				'',
+				'',
+				'',
+				'',
+				'0',
+				'1',
+				'0',
+				'1',
+				#cond1#,
+				#cond2#, 
+				#cond3#,
+				#cond6#, 
+				#cond7#,
+				#cond8#,
+				#cond11#, 
+				'', 
+				'', 
+				'')
+        ]]>
+    </insert>
+
+</sqlMap>    
