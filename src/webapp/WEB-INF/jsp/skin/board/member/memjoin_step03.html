@@ -1,0 +1,225 @@
+<div id="wrap">
+    <!-- 내용 -->
+    <div class="mem_cont_wrap">
+      <div class="mem_cont_inner">
+        <h3 class="sub_cont_ttl">부패·공익신고센터</h3>
+        <!-- 정보입력 -->
+        <div class="memjoin_step_wrap">
+          <ol>
+            <li class="memjoin_step01">
+              <i></i>
+              <p>STEP 01<br />약관동의</p>
+            </li>
+            <li class="memjoin_step02">
+              <i></i>
+              <p>STEP 02<br />본인인증</p>
+            </li>
+            <li class="memjoin_step03 on">
+              <i></i>
+              <p>STEP 03<br />신고서/건의서 작성</p>
+            </li>
+            <li class="memjoin_step04">
+              <i></i>
+              <p>STEP 04<br />신고서 제출</p>
+            </li>
+          </ol>
+        </div>
+        <form
+          method="post"
+          action="/skin/member/call.html"
+          enctype="multipart/form-data"
+        >
+          <div class="absurdity_report_wrap Dec_report_wrap">
+            <!-- 신고내용 -->
+            <div class="absurdity_report_each">
+              <div class="absurdity_report_ttl Dec_report_ttl">
+                <!-- <strong>건의서 작성</strong> -->
+                <p class="must">
+                  신고내용은 비공개이며, *표시된 곳은 반드시 입력하여야 합니다.
+                </p>
+              </div>
+              <table class="report_table">
+                <caption>
+                  신고서 작성 테이블
+                </caption>
+                <colgroup>
+                  <col width="200px" />
+                  <col width="1000px" />
+                </colgroup>
+                <tr>
+                  <th>신고자 성명<span class="must">*</span></th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>신고자 휴대전화<span class="must">*</span></th>
+                  <!--<td></td>-->
+                  <td>
+                    <div class="input_wrap">
+                      <select name="usermobile1" title="휴대전화 첫자리 선택">
+                        <option>010</option>
+                      </select>
+                      <p class="dash">-</p>
+                      <input
+                        class="phone_num"
+                        id="mobile2"
+                        name="mobile2"
+                        placeholder="휴대전화 중간번호 입력"
+                        type="number"
+                        maxlength="4"
+                        oninput="maxLengthCheck(this)"
+                        required
+                      />
+                      <p class="dash">-</p>
+                      <input
+                        class="phone_num"
+                        id="mobile3"
+                        name="mobile3"
+                        placeholder="휴대전화 마지막번호 입력"
+                        type="number"
+                        maxlength="4"
+                        oninput="maxLengthCheck(this)"
+                        required
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>
+                    신고자 <br class="mob_br" />이메일 주소<span class="must"
+                      >*</span
+                    >
+                  </th>
+                  <td>
+                    <div class="input_wrap">
+                      <input
+                        id="email_id"
+                        name="email_id"
+                        class="email_input"
+                        placeholder="이메일 ID 입력"
+                        title="이메일 ID 입력"
+                        type="text"
+                        required
+                      />
+                      <p class="dash">@</p>
+                      <input
+                        class="email_input"
+                        id="email_domain"
+                        name="email_domain"
+                        placeholder="이메일 도메인 입력"
+                        title="이메일 도메인 입력"
+                        type="text"
+                      />
+                      <select
+                        id="email_sel"
+                        class="email_sel"
+                        title="이메일 도메인 선택"
+                      >
+                        <option value="0">직접 입력</option>
+                        <option value="naver.com">naver.com</option>
+                        <option value="daum.net">daum.net</option>
+                        <option value="kakao.com">kakao.com</option>
+                        <option value="nate.com">nate.com</option>
+                        <option value="gmail.com">gmail.com</option>
+                      </select>
+                    </div>
+                    <p class="id_stat">
+                      *신고결과가 메일로 발송되오니, 정확한 이메일주소를
+                      입력해주시기 바랍니다.
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <th>신고제목<span class="must">*</span></th>
+                  <td>
+                    <div class="input_wrap input_wrap_tit">
+                      <input
+                        id="title"
+                        name="title"
+                        placeholder="제목은 요약하여 30자 이내로 작성하여 주시기 바랍니다."
+                        title="제목유형 입력"
+                        type="text"
+                        maxlength="30"
+                        required
+                      />
+                      <span>0/30글자</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>신고내용<span class="must">*</span></th>
+                  <td>
+                    <div class="input_wrap">
+                      <p class="input_wrap_txt">
+                        ※ 신고내용은 2000자 이내로 작성하여 주시고, 내용이 많은
+                        경우는 파일로 첨부하여 주시기 바랍니다<br />
+                        ※ 아래 사항을 참조하여 구체적으로 기술하여 주십시오<br />
+                        -누가 : 신고와 관련된 대상자의 소속, 직위, 성명 등을 기재
+                        (ex: 00팀 홍길동 과장)<br />
+                        -언제 : 행위가 발생한 시점을 기재 (ex: 2022년 1월 1일, 1월
+                        중순 등)<br />
+                        -어디서 : 행위가 발생한 장소를 기재 (ex: 재단 8층 회의실,
+                        DDP 배움터 등)<br />
+                        -무엇을 : 혐의대상자의 갑질행위를 구체적으로 기재
+                      </p>
+                      <textarea
+                        id="content"
+                        name="content"
+                        cols="30"
+                        rows="10"
+                        required
+                      ></textarea>
+                      <div class="input_wrap_cnt" id="input_cnt">
+                        (0 / 2,000) 글자
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>첨부파일<span class="must">*</span></th>
+                  <td>
+                    <div class="input_wrap">
+                      <input
+                        class="report_attach"
+                        id="attachFile"
+                        readonly="readonly"
+                        type="text"
+                        placeholder="※ 등록가능한 파일의 확장자명 hwp, docx, jpeg, xlsx, doc, txt, ppt, pdf, avi, mp4, gif, png, zip, mp3, hwpx"
+                      />
+                      <p class="btn_find_attach">
+                        <a href="javascript:;">파일 찾기</a>
+                        <input
+                          type="file"
+                          id="file_btn"
+                          name="attachFile"
+                          class="file_btn"
+                        />
+                        <input type="hidden" name="attachFileAlt" />
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <div class="find_result_btns">
+                <a href="/?menuno=467" class="grey w120 Dec_btn">취소</a>
+                <!-- <input type="submit" class="grey w120 Dec_btn" onclick="temp" value="임시저장"> -->
+                <input
+                  type="submit"
+                  id="submitBtn"
+                  class="black w120 Dec_btn"
+                  value="최종제출"
+                />
+              </div>
+            </div>
+          </div>
+          <input type="hidden" value="477" name="cateno" />
+          <input type="hidden" value="478" name="menuno" />
+        </form>
+        <!-- 정보입력 end -->
+      </div>
+    </div>
+    <!-- 내용 end -->
+    <p class="btn_top">
+      <a href="javascript:;">위로</a>
+    </p>
+  </div>
+  
